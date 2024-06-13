@@ -1,15 +1,10 @@
--- create user gitscanner;
+-- RUN as postgres user
 
--- Create user with password
 CREATE USER gitscan WITH PASSWORD '123456';
-
--- Grant privileges on database
 GRANT ALL PRIVILEGES ON DATABASE gitscan TO gitscan;
-
 GRANT ALL PRIVILEGES ON SCHEMA public TO gitscan;
 
--- -- Grant all privileges on all tables in the schema
--- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA gitscan TO gitscan;
+-- RUN as gitscan user
 
 CREATE TABLE commits (
      owner VARCHAR NOT NULL,
