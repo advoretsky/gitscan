@@ -1,6 +1,10 @@
 -- RUN as postgres user
 
+CREATE DATABASE gitscan;
 CREATE USER gitscan WITH PASSWORD '123456';
+
+-- connect to database gitscan
+
 GRANT ALL PRIVILEGES ON DATABASE gitscan TO gitscan;
 GRANT ALL PRIVILEGES ON SCHEMA public TO gitscan;
 
